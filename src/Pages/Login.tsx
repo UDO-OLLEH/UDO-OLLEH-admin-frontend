@@ -1,22 +1,15 @@
 import axios from "axios";
 import * as Yup from "yup";
 import * as React from "react";
-import {
-  Formik,
-  FormikHelpers,
-  FormikProps,
-  Form,
-  Field,
-  FieldProps,
-  ErrorMessage,
-} from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Box, Button, Card, Container, TextField } from "@material-ui/core";
 
 const Login = (props: any) => {
   return (
     <div className="col-md-12">
       <div className="card card-container">
         <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+          src="img\우도올레1.png"
           alt="profile-img"
           className="profile-img-card"
         />
@@ -40,8 +33,13 @@ const Login = (props: any) => {
           {(props) => (
             <Form>
               <div className="form-group">
-                <label htmlFor="username">Username</label>
-                <Field name="username" type="text" className="form-control" />
+                <TextField
+                  name="username"
+                  type="text"
+                  label="Username"
+                  variant="outlined"
+                  margin="dense"
+                />
                 <ErrorMessage
                   name="username"
                   component="div"
@@ -50,11 +48,12 @@ const Login = (props: any) => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <Field
+                <TextField
                   name="password"
                   type="password"
-                  className="form-control"
+                  label="Password"
+                  variant="outlined"
+                  margin="dense"
                 />
                 <ErrorMessage
                   name="password"
@@ -64,9 +63,9 @@ const Login = (props: any) => {
               </div>
 
               <div className="form-group">
-                <button type="submit" className="btn btn-primary btn-block">
+                <Button type="submit" variant="contained" color="primary">
                   <span>Login</span>
-                </button>
+                </Button>
               </div>
             </Form>
           )}
